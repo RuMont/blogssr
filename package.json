@@ -2,10 +2,10 @@
   "name": "blog-ssr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev ./index.ts",
-    "build": "tsc . ./prod"
+    "build": "tsc --build && xcopy \"./src/public\" \"./dist/src/public\" /s /e"
   },
   "keywords": [],
   "author": "",

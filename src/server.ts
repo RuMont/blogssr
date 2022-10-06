@@ -6,14 +6,14 @@ import { getView, registerRoutes } from "./helpers/local";
 
 export class Server {
     private express: express.Express;
-    private port: number;
     private serverInstance?: http.Server;
 
-    constructor(port: number) {
-        this.port = port;
+    constructor(private port: number) {
         this.express = express();
         this.express.use(json());
         this.express.use(express.static(path.join(__dirname, 'public')));
+
+        console.log(__dirname)
 
         const router = Router();
         this.express.use(router);
@@ -30,7 +30,7 @@ export class Server {
      */
     listen() {
         this.serverInstance = this.express.listen(this.port, async () => {
-            console.log(`Server running on http://localhost:${this.port}`);
+            console.log(`Server running on port ${(this.serverInstance!.address() as any).port}`);
         });
     }
 

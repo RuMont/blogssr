@@ -7,7 +7,7 @@ export class Init {
      * Starts the app
      */
     constructor() {
-        this.server = new Server(3000);
+        this.server = new Server(0);
         this.server?.listen();
     }
 
