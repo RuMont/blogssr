@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/global.css" />
+        <link rel="stylesheet" href="/libs/highlight/styles/atom-one-dark.min.css">
+        <script src="/libs/highlight/highlight.min.js"></script>
+        <script defer src="/js/basic.js"></script>
+        <title>Program.NET | tipos</title>
+    </head>
+    <body>
+        <button type="button" onclick="history.back()" class="back">Volver</button>
+    <header>
+        <h1>Tipos en C#</h1>
+<span class='description'>C# es un lenguaje de tipado fuerte, por lo que los tipos son muy importantes</span><br/><span>5/10/2022</span><br/>
+    </header>
+        <main>
+                <p>Existen lenguajes con tipados débiles como JavaScript o PHP, en los que las variables pueden cambiar de tipo fácilmente. Normalmente suelen ser los lenguajes que no son compilados; estos lenguajes tienen un intérprete que identifica el tipo de las variables.</p>
+<p>A diferencia de estos lenguajes, C# es un lenguaje de programación de tipado fuerte o estricto; esto es, las variables no pueden cambiar su tipo una vez declaradas (salvo en algunas situaciones). Esto hace de C# un lenguaje más robusto y seguro al crear un proyecto, aunque hay que dedicar algo más de tiempo.</p>
+<p>En la <a href="https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/types/">documentación oficial</a> de .NET se explica el sistema de tipos de C#, pero aquí lo explicaremos de una forma más sencilla de comprender.</p>
+<p><br/></p>
+<h1 id="-qu-es-un-tipo-">¿Qué es un tipo?</h1>
+<p>Una variable siempre, en todos los lenguajes, debe de llevar un tipo, ya sea numérico (entero o flotante), cadena de caracteres (string), booleano (true o false), entre otros.</p>
+<p>Los tipos otorgan de funcionalidad a la variable, pues nuestro IDE nos sugerirá ciertas funciones que podremos usar con un tipo determinado. Podemos sumar dos números con valor distinto pero no podemos sumar dos números de tipo <strong>string</strong>:</p>
+
+<pre><code>int firstNum = 2;
+int secondNum = 3;
+
+int multResult = firstNum + secondNum; // El resultado es 5
+
+string thirdNum = &quot;2&quot;;
+string fourthNum = &quot;3&quot;;
+string sumResult = thirdNum + fourthNum; // El resultado es 23
+
+// Esto será un string con valor 32
+var badResult = secondNum + thirdNum;
+</code></pre>
+<p>En C#, a diferencia de otros lenguajes, los tipos no pueden cambiar, al menos que usemos alguna técnica algo más avanzada llamada <em>casting</em>.</p>
+<p>Saber que el tipo de las variables no va a cambiar salvo que se fuerce otorga mucha seguridad al programar, sobretodo en proyectos de gran envergadura, aunque el programa requiere algo más de tiempo.</p>
+<p><br/></p>
+<h1 id="tipos-integrados">Tipos integrados</h1>
+<p>C#, como en la mayoría de lenguajes, trae consigo ciertos <a href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/builtin-types/built-in-types">tipos</a> ya integrados. Estos tipos se clasifican en dos: tipos de valor o primitivos y tipos de referencia.</p>
+<p><br/></p>
+<h2 id="tipos-de-valor">Tipos de valor</h2>
+<p>Los <a href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/builtin-types/value-types">tipos de valor</a> son aquellos que existen dentro de un lugar concreto de la memoria, como son los tipos <strong>int</strong>, <strong>double</strong>, <strong>bool</strong>, <strong>char</strong>, <strong>byte</strong> o <strong>struct</strong>.</p>
+<p><br/></p>
+<h4 id="1-tipos-num-ricos">1. Tipos numéricos</h4>
+<p>Los tipos numéricos <ins>integrados</ins> representan números enteros, sin decimales, y permiten realizar <a href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/operators/arithmetic-operators">operaciones aritméticas</a> (una multiplicación), <a href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/operators/boolean-logical-operators">lógicas</a> (ver si una condición se cumple o no), de comparación (si un número es mayor que otro) y de igualdad (si un número es igual a otro).</p>
+<p>El tipo numérico entero más usado es <strong>int</strong>.</p>
+
+<pre><code>int cars = 5;
+
+int bikes = 3;
+
+// Operación aritmética
+int vehicles = cars + bikes; // El resultado es 8;
+
+// Operación lógica
+var isCarsAmountHigher = cars &gt; bikes; // El resultado es un booleano con valor true
+</code></pre>
+<p>Los tipos numéricos <ins>flotantes</ins> representan números reales, con decimales, y también permiten operaciones aritméticas y lógicas.</p>
+<p>El tipo numérico real más usado es <strong>double</strong>.</p>
+
+<pre><code>int apples = 4;
+
+double people = 3.0;
+
+// Operación aritmética
+double applesPerPerson = apples / people; // El resultado es 1.33333333334
+
+// Operación lógica
+bool moreApplesThanPeople = apples &gt; people; // El resultado es true
+</code></pre>
+<p><br/></p>
+<h4 id="2-tipos-booleanos">2. Tipos booleanos</h4>
+<p>El tipo booleano representa un valor binario que puede ser <strong><em>true</em> o <em>false</em></strong>. Los tipos booleanos se utilizan en <a href="https://www.smartick.es/blog/otros-contenidos/programacion/operadores-booleanos/">operaciones lógicas</a>; en estructuras de control como los condicionales (if-else).</p>
+<p>Podemos hacer comprobaciones en nuestro código para ver si ejecutamos una parte del código en concreto o no:</p>
+
+<pre><code>int apples = 4;
+
+double people = 3.0;
+
+double applesPerPerson;
+
+// Si hay más manzanas que personas
+// dividimos las manzanas entre ellos
+if (apples &gt; people)
+{
+    applesPerPerson = apples / people;
+}
+// Si hay menos manzanas, las multiplicamos
+// por dos
+else
+{
+    people *= 2;
+}
+</code></pre>
+<p><br/></p>
+<h4 id="3-caracteres">3. Caracteres</h4>
+<p>El tipo <strong>char</strong> representa una letra, aunque se almacena en memoria como un caracter <a href="https://es.wikipedia.org/wiki/Unicode">Unicode</a> de 16 bits, por lo que podemos hacer operaciones ariméticas y lógicas con los chars.</p>
+<p>Aunque su uso más común es la formación de palabras, que son los <ins>strings</ins>.</p>
+<p>El tipo <strong>struct</strong> lo veremos más adelante, pues es un tipo más complejo que los anteriores, ya que puede tener variables y funciones dentro de la estructura.</p>
+<p><br/></p>
+<h2 id="tipos-de-referencia">Tipos de referencia</h2>
+<p>Las variables con <a href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/keywords/reference-types">tipos de referencia</a>, a diferencia de los de valor, son una dirección de memoria a donde se encuentran los valores que componen esa variable.</p>
+<p>Podemos decir que un tipo de referencia no tiene los valores pero tiene la dirección de memoria de ellos.</p>
+<p>Las estructuras más comunes que son tipos de referencia son los <a href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type">strings</a>, los <a href="https://learn.microsoft.com/es-es/dotnet/csharp/programming-guide/arrays/single-dimensional-arrays">vectores</a> (arrays), las <a href="https://learn.microsoft.com/es-es/dotnet/api/system.collections.generic.list-1?view=net-6.0">listas</a> y los <a href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/builtin-types/reference-types#the-object-type">objetos</a>.</p>
+<p><br/></p>
+<h4 id="1-cadenas-de-caracteres">1. Cadenas de caracteres</h4>
+<p>Un <strong>string</strong> es una secuencia de valores de tipo <strong>char</strong>. Los strings permiten operadores de igualdad.</p>
+
+<pre><code>string myName = &quot;Pepe&quot;;
+string hisName = &quot;Pepe&quot;;
+
+bool areNamesTheSame = myName == hisName; // true
+</code></pre>
+<p>También podemos concatenar strings:</p>
+
+<pre><code>string myName = &quot;Pepe&quot;;
+string hisName = &quot;Pepe&quot;;
+
+string doubleName = myName + hisName; // &quot;PepePepe&quot;;
+</code></pre>
+<p><br/></p>
+<h4 id="2-arrays">2. Arrays</h4>
+<p>Con el operador <strong>[]</strong> podemos acceder a letras en concreto del string.</p>
+
+<pre><code>string myName = &quot;Pepe&quot;;
+char letterE = myName[1]; // obtenemos la e
+</code></pre>
+<p>El símbolo <strong>[]</strong> identifica un array o vector. Los arrays son colecciones de datos de un mismo tipo. En C# únicamente podemos leer estos valores, no podemos modificarlos (<a href="https://medium.com/@akedalat/how-arrays-allocate-memory-a9bc93c0ad45">y es mejor que sea así</a>).</p>
+<p><img src="https://miro.medium.com/max/640/1*-ImKrqrT14UlG6wMpAEIJQ.png" class="responsive"></p>
+<p>Para crear arrays hay que especificar una longitud fija:</p>
+
+<pre><code>int[] numbers = new int[5];
+// o también
+int[] numbers = new int[] {1, 2, 3, 4, 5};
+// o incluso
+int[] numbers = {1, 2, 3, 4, 5};
+</code></pre>
+<p>Los arrays son colecciones que podemos recorrer con <strong>bucles</strong>, que veremos más tarde.</p>
+<p>Para obtener algún valor de nuestro array &#39;numbers&#39; necesitamos buscar el valor según la posición en el array (mejor llamado índice).</p>
+<p>Como en la ilustración anterior indica, los arrays en programación (salvo en algún lenguaje peculiar como Lua) empiezan por el índice 0.</p>
+<p>Por lo que si queremos obtener el número 1 de nuestro array, buscaremos la posición 0:</p>
+
+<pre><code>int[] numbers = new int[] {1, 2, 3, 4, 5};
+int numberOne = numbers[0]; // 1
+</code></pre>
+<p><br/></p>
+<h4 id="3-listas">3. Listas</h4>
+<p><img src="https://i.imgur.com/POZoOkE.png" class="responsive"></p>
+<p>Las listas, a diferencia de los arrays no tienen una longitud fija, si no que son valores unidos mediante <a href="https://www.c-sharpcorner.com/article/pointers-in-C-Sharp/">punteros</a>.</p>
+<p>Aquí no veremos los punteros, ya que forman parte del código no seguro en el que el desarrollador debe de gestionar él mismo la memoria. C# ya cuenta con una herramienta para gestionar la memoria, el <a href="https://www.c-sharpcorner.com/article/pointers-in-C-Sharp/">garbage collector</a>.</p>
+<p>En las listas podemos quitar y añadir valores:</p>
+
+<pre><code>string myName = &quot;Marcos&quot;;
+List&lt;string&gt; names = new List&lt;string&gt;();
+
+// Podemos añadir y borrar elementos en la lista
+names.Add(myName); // {&quot;Marcos&quot;}
+names.Add(&quot;Jose Luis&quot;); // {&quot;Marcos&quot;, &quot;Jose Luis&quot;}
+names.Contains(&quot;Pepe&quot;); // false
+names.Remove(&quot;Jose Luis&quot;); // {&quot;Marcos&quot;}
+names.Add(&quot;Paco&quot;); // {&quot;Marcos&quot;, &quot;Paco&quot;}
+names.Remove(names[0]); // {&quot;Paco&quot;}
+
+names.Clear();
+
+names.Capacity; // 0;
+</code></pre>
+<p><br/></p>
+<h4 id="4-el-tipo-objeto">4. El tipo objeto</h4>
+<p>El tipo objeto es un tipo de referencia complejo, pues se compone de:</p>
+
+<ul>
+<li>Propiedades o atributos (variables dentro del objeto)</li>
+<li>Métodos (funciones dentro del objeto)</li>
+</ul>
+<p>Los objetos pueden ser creados a partir de una <strong>clase</strong> o de una <strong>struct</strong> que actúan como plantillas, o pueden ser creados manualmente.</p>
+
+<pre><code>object obj = new object();
+</code></pre>
+<p>Sin embargo, esto no tiene mucha utilidad en C#. En otros lenguajes como Javascript, los objetos son un tipo de dato clave/valor, también llamado <strong><a href="https://learn.microsoft.com/es-es/dotnet/api/system.collections.generic.dictionary-2?view=net-7.0#remarks">diccionario o mapa</a></strong>.</p>
+
+<pre><code>// Instancias de clases que nos permiten leer archivos
+Stream stream = new MemoryStream();
+
+StreamReader reader = new StreamReader(stream);
+
+reader.Read();
+</code></pre>
+<p>Los objetos son instancias de una clase. Es decir, si una clase fuera la un taller de coches, el objeto sería el coche, con sus métodos de moverse y sus atributos ruedas.</p>
+<p>En el <a href="../funciones">siguiente artículo</a> veremos las funciones</p>
+
+        </main>
+    </body>
+</html>

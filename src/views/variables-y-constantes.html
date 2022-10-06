@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/global.css" />
+        <link rel="stylesheet" href="/libs/highlight/styles/atom-one-dark.min.css">
+        <script src="/libs/highlight/highlight.min.js"></script>
+        <script defer src="/js/basic.js"></script>
+        <title>Program.NET | variables-y-constantes</title>
+    </head>
+    <body>
+        <button type="button" onclick="history.back()" class="back">Volver</button>
+    <header>
+        <h1>Variables y constantes en C#</h1>
+<span class='description'>Unidades básicas en cualquier programa</span><br/><span>5/10/2022</span><br/>
+    </header>
+        <main>
+                <p>Las variables y las constantes son las unidades básicas con las que realizamos acciones en nuestro código.</p>
+<p><br/></p>
+<h1 id="variables">Variables</h1>
+<p>Las variables son unos identificadores que nos ayudan a conocer un valor (estos valores se guardan en la memoria volátil del ordenador, normalmente la RAM). Estos identificadores pueden cambiar de valor, ya que, como su nombre indica, son variables.</p>
+<p>En C# podemos declarar una variable de la siguiente manera:</p>
+
+<pre><code>int firstNum = 1;
+
+var username = &quot;rodri14xx&quot;
+
+string name = &quot;Pepe&quot;;
+</code></pre>
+<p>Y podemos cambiar su valor en cualquier momento:</p>
+
+<pre><code>firstNum = 2;
+
+name = &quot;Jose&quot;;
+</code></pre>
+<p>La palabra <strong>var</strong> es una <a href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/keywords/">palabra reservada (keyword)</a> y no podemos usarla como nombre de una variable, ya que le sirven al compilador para saber que eso que estamos escribiendo es efectivamente una variable.</p>
+<p>Con la palabra <strong>var</strong> la variable obtiene un <ins>tipo</ins> dependiendo del valor, pero con las palabras <strong>string</strong> o <strong>int</strong> nosotros le indicamos el tipo de la variable al compilador (hablaremos sobre los tipos en artículos siguientes).</p>
+
+<pre><code>int firstNum = 2;
+
+int secondNum = 3;
+
+var multResult = firstNum * secondNum; 
+
+Console.WriteLine(multResult); // El resultado es 6
+
+secondNum = 4;
+
+Console.WriteLine(multResult); // El resultado es 8
+</code></pre>
+<p><br/></p>
+<h1 id="constantes">Constantes</h1>
+<p>Las constantes, a diferencia de las variables, las usamos cuando queremos que un valor no cambie (y nos dará error si lo intentamos cambiar). Además, en C# nos obliga a especificar el tipo de la constante.</p>
+
+<pre><code>const int FIRST_NUM = 4;
+</code></pre>
+<p>Si queremos cambiar el valor:</p>
+
+<pre><code>FIRST_NUM = 5;
+</code></pre>
+<p>Nos saltará un error:</p>
+<p><img src="https://i.imgur.com/5wuxpzs.png" class="responsive" alt="Error al cambiar el valor de una constante"></p>
+<p>Por esto, sólo podremos usar las constantes para leerlas, nunca para modificarlas.</p>
+<p>En C# existe la keyword <strong>readonly</strong>, que es parecida a <strong>const</strong> pero la veremos con las clases.</p>
+<p>En el <a href="../tipos">siguiente artículo</a> veremos los tipos de las variables.</p>
+
+        </main>
+    </body>
+</html>

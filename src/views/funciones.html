@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/global.css" />
+        <link rel="stylesheet" href="/libs/highlight/styles/atom-one-dark.min.css">
+        <script src="/libs/highlight/highlight.min.js"></script>
+        <script defer src="/js/basic.js"></script>
+        <title>Program.NET | funciones</title>
+    </head>
+    <body>
+        <button type="button" onclick="history.back()" class="back">Volver</button>
+    <header>
+        <h1>Funciones en C#</h1>
+<span class='description'>Si queremos repetir tareas en nuestro código, necesitamos funciones</span><br/><span>6/10/2022</span><br/>
+    </header>
+        <main>
+                <h1 id="-qu-son-las-funciones-">¿Qué son las funciones?</h1>
+<p>Las funciones son elementos de la programación que nos sirven para ejecutar tareas de forma encapsulada al resto del código. Podemos decir que las funciones son programas dentro de nuestro programa.</p>
+<p>Algunos casos de uso de las funciones pueden ser realizar tareas repetitivas a lo largo de nuestro código como podría ser una serie de cálculos. En lugar de escribir todo el rato esa misma serie de cálculos, podemos crear una función y llamarla cada vez que la necesitemos.</p>
+<p><br/></p>
+<h1 id="estructura-de-una-funci-n">Estructura de una función</h1>
+<p>En C# se entiende que es una función porque justo al lado del nombre de esta, tiene unos paréntesis <strong>()</strong> y también nos indica el tipo de dato que va a devolver, si es que devuelve.</p>
+
+<pre><code>int sum()
+{
+    return 2 + 3;
+}
+
+// La ejecución de la función devuelve un resultado.
+// Este resultado podemos asignarlo a una variable.
+int five = sum();
+</code></pre>
+<p>A estas funciones podemos pasarles argumentos a nuestras funciones para que realicen esas operaciones con valores dinámicos:</p>
+
+<pre><code>int sum(int a, int b)
+{
+    return a + b;
+}
+
+/** Pasamos cualquier parámetro
+* que sea del tipo que la función
+* nos pide. */
+int result = sum(291, 323); // 614
+</code></pre>
+<p>También podemos crear funciones que no devuelvan ningún valor. En este caso se usa el tipo <strong>void</strong>:</p>
+
+<pre><code>void noReturnFunction()
+{
+    List&lt;int&gt; numbers = new List&lt;int&gt;();
+    numbers.Add(1);
+    numbers.Add(2);
+}
+</code></pre>
+<p>Como veíamos en el artículo anterior, una función dentro de una clase se llama método.</p>
+<p>En el <a href="../clases">artículo siguiente</a> veremos las clases y sus características.</p>
+
+        </main>
+    </body>
+</html>
